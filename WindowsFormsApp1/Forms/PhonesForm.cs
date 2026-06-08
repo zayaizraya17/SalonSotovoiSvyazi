@@ -41,7 +41,7 @@ namespace MobileStoreApp.Forms
             _headerPanel = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 110,
+                Height = 140,
                 BackColor = Color.Transparent
             };
             _headerPanel.Paint += HeaderPanel_Paint;
@@ -65,9 +65,39 @@ namespace MobileStoreApp.Forms
                 Location = new Point(45, 58),
                 BackColor = Color.Transparent
             };
+            
+            // Поле поиска
+            var searchPanel = new Panel
+            {
+                Dock = DockStyle.Top,
+                Height = 50,
+                BackColor = _bgColor,
+                Padding = new Padding(40, 10, 40, 10)
+            };
+            
+            var lblSearch = new Label
+            {
+                Text = "🔍 Поиск:",
+                Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold),
+                ForeColor = _textDark,
+                AutoSize = true,
+                Location = new Point(0, 12)
+            };
+            
+            var txtSearch = new TextBox
+            {
+                Width = 300,
+                Font = new Font("Segoe UI", 11),
+                Location = new Point(80, 8),
+                BorderStyle = BorderStyle.FixedSingle
+            };
+            txtSearch.TextChanged += (s, e) => SearchPhones(txtSearch.Text);
 
             _headerPanel.Controls.Add(titleLabel);
             _headerPanel.Controls.Add(subtitleLabel);
+            _headerPanel.Controls.Add(searchPanel);
+            searchPanel.Controls.Add(lblSearch);
+            searchPanel.Controls.Add(txtSearch);
 
             // Таблица с современным стилем
             _grid = new DataGridView
@@ -191,6 +221,12 @@ namespace MobileStoreApp.Forms
         private void LoadData()
         {
             _grid.DataSource = _db.GetPhones();
+        }
+        
+        private void SearchPhones(string searchTerm)
+        {
+            var results = _db.SearchPhones(searchTerm);
+            _grid.DataSource = results;
         }
 
         private void AddItem()
