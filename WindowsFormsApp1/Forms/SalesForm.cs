@@ -32,7 +32,9 @@ namespace MobileStoreApp.Forms
                 Dock = DockStyle.Top,
                 Height = 160,
                 BackColor = Color.FromArgb(250, 250, 250),
-                Padding = new Padding(20, 15, 20, 15)
+                Padding = new Padding(20, 15, 20, 15),
+                AutoSize = true,
+                AutoSizeMode = AutoSizeMode.GrowAndShrink
             };
 
             var lblPhone = new Label
@@ -104,21 +106,26 @@ namespace MobileStoreApp.Forms
                 Location = new Point(640, 55)
             };
 
-            var btnSell = new Button
+            topPanel.Controls.Add(lblPhone);
+            topPanel.Controls.Add(_cmbPhones);
+            topPanel.Controls.Add(lblQuantity);
+            topPanel.Controls.Add(txtQuantity);
+            topPanel.Controls.Add(lblCustomer);
+            topPanel.Controls.Add(txtCustomerName);
+            topPanel.Controls.Add(lblCustomerPhone);
+            topPanel.Controls.Add(txtCustomerPhoneNum);
+
+            // Нижняя панель с кнопками
+            var btnPanel = new FlowLayoutPanel
             {
-                Text = "💰 Продать",
-                Width = 160,
-                Height = 45,
-                Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(230, 126, 34),
-                ForeColor = Color.White,
-                Cursor = Cursors.Hand,
-                Location = new Point(820, 50)
+                Dock = DockStyle.Bottom,
+                Height = 70,
+                FlowDirection = FlowDirection.RightToLeft,
+                Padding = new Padding(10),
+                BackColor = Color.FromArgb(250, 250, 250)
             };
-            btnSell.FlatAppearance.BorderSize = 0;
-            btnSell.FlatAppearance.MouseOverBackColor = Color.FromArgb(211, 84, 0);
-            btnSell.Click += (s, e) =>
+
+            var btnSell = CreateStyledButton("💰 Продать", Color.FromArgb(230, 126, 34), (s, e) =>
             {
                 if (_cmbPhones.SelectedItem != null)
                 {
@@ -174,17 +181,12 @@ namespace MobileStoreApp.Forms
                         MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            };
+            });
 
-            topPanel.Controls.Add(lblPhone);
-            topPanel.Controls.Add(_cmbPhones);
-            topPanel.Controls.Add(lblQuantity);
-            topPanel.Controls.Add(txtQuantity);
-            topPanel.Controls.Add(lblCustomer);
-            topPanel.Controls.Add(txtCustomerName);
-            topPanel.Controls.Add(lblCustomerPhone);
-            topPanel.Controls.Add(txtCustomerPhoneNum);
-            topPanel.Controls.Add(btnSell);
+            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
+            
+            btnPanel.Controls.Add(btnClose);
+            btnPanel.Controls.Add(btnSell);
 
             // Таблица
             _grid = new DataGridView
@@ -216,19 +218,6 @@ namespace MobileStoreApp.Forms
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SaleDate", HeaderText = "Дата", Width = 150 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Quantity", HeaderText = "Количество", Width = 100 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TotalPrice", HeaderText = "Сумма", Width = 150 });
-
-            // Нижняя панель
-            var btnPanel = new FlowLayoutPanel
-            {
-                Dock = DockStyle.Bottom,
-                Height = 70,
-                FlowDirection = FlowDirection.RightToLeft,
-                Padding = new Padding(10),
-                BackColor = Color.FromArgb(250, 250, 250)
-            };
-
-            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
-            btnPanel.Controls.Add(btnClose);
 
             this.Controls.Add(_grid);
             this.Controls.Add(btnPanel);
