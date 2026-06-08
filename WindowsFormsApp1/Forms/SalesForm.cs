@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MobileStoreApp.Data;
+using MobileStoreApp.Models;
 using System.Linq;
 
-namespace MusicStoreApp.Forms
+namespace MobileStoreApp.Forms
 {
     public partial class SalesForm : Form
     {
         private DatabaseHelper _db;
         private DataGridView _grid;
-        private ComboBox _cmbInstruments;
+        private ComboBox _cmbPhones;
 
         public SalesForm(DatabaseHelper db)
         {
@@ -22,38 +22,38 @@ namespace MusicStoreApp.Forms
         private void InitializeComponent()
         {
             this.Text = "💰 Продажи";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Size = new System.Drawing.Size(1100, 600);
             this.BackColor = Color.FromArgb(240, 240, 240);
             this.StartPosition = FormStartPosition.CenterScreen;
 
-            // Верхняя панель с выбором инструмента
+            // Верхняя панель с выбором телефона
             var topPanel = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 80,
+                Height = 120,
                 BackColor = Color.FromArgb(250, 250, 250),
                 Padding = new Padding(20, 15, 20, 15)
             };
 
-            var lblInstrument = new Label
+            var lblPhone = new Label
             {
-                Text = "Инструмент:",
+                Text = "Телефон:",
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
                 Location = new Point(20, 25)
             };
 
-            _cmbInstruments = new ComboBox
+            _cmbPhones = new ComboBox
             {
-                Width = 300,
+                Width = 350,
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Font = new Font("Segoe UI", 10),
                 Location = new Point(120, 20)
             };
-            _cmbInstruments.DisplayMember = "Name";
-            _cmbInstruments.ValueMember = "Id";
-            _cmbInstruments.DataSource = _db.GetInstruments();
+            _cmbPhones.DisplayMember = "Model";
+            _cmbPhones.ValueMember = "Id";
+            _cmbPhones.DataSource = _db.GetPhones();
 
             var lblQuantity = new Label
             {
@@ -61,7 +61,7 @@ namespace MusicStoreApp.Forms
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
-                Location = new Point(440, 25)
+                Location = new Point(490, 25)
             };
 
             var txtQuantity = new TextBox
@@ -69,7 +69,39 @@ namespace MusicStoreApp.Forms
                 Width = 80,
                 Text = "1",
                 Font = new Font("Segoe UI", 10),
-                Location = new Point(510, 20)
+                Location = new Point(560, 20)
+            };
+
+            var lblCustomer = new Label
+            {
+                Text = "Покупатель:",
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                ForeColor = Color.FromArgb(44, 62, 80),
+                AutoSize = true,
+                Location = new Point(20, 65)
+            };
+
+            var txtCustomerName = new TextBox
+            {
+                Width = 200,
+                Font = new Font("Segoe UI", 10),
+                Location = new Point(120, 60)
+            };
+
+            var lblCustomerPhone = new Label
+            {
+                Text = "Телефон:",
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
+                ForeColor = Color.FromArgb(44, 62, 80),
+                AutoSize = true,
+                Location = new Point(340, 65)
+            };
+
+            var txtCustomerPhoneNum = new TextBox
+            {
+                Width = 150,
+                Font = new Font("Segoe UI", 10),
+                Location = new Point(420, 60)
             };
 
             var btnSell = new Button
@@ -82,20 +114,20 @@ namespace MusicStoreApp.Forms
                 BackColor = Color.FromArgb(230, 126, 34),
                 ForeColor = Color.White,
                 Cursor = Cursors.Hand,
-                Location = new Point(610, 18)
+                Location = new Point(660, 55)
             };
             btnSell.FlatAppearance.BorderSize = 0;
             btnSell.FlatAppearance.MouseOverBackColor = Color.FromArgb(211, 84, 0);
             btnSell.Click += (s, e) =>
             {
-                if (_cmbInstruments.SelectedItem != null)
+                if (_cmbPhones.SelectedItem != null)
                 {
                     try
                     {
-                        var instrument = (Instrument)_cmbInstruments.SelectedItem;
+                        var phone = (Phone)_cmbPhones.SelectedItem;
                         int quantity = int.Parse(txtQuantity.Text);
 
-                        if (quantity > instrument.Quantity)
+                        if (quantity > phone.Quantity)
                         {
                             MessageBox.Show("❌ Недостаточно на складе!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                             return;
@@ -103,20 +135,22 @@ namespace MusicStoreApp.Forms
 
                         var sale = new Sale
                         {
-                            InstrumentId = instrument.Id,
+                            PhoneId = phone.Id,
+                            CustomerName = txtCustomerName.Text,
+                            CustomerPhone = txtCustomerPhoneNum.Text,
                             Quantity = quantity,
-                            TotalPrice = instrument.Price * quantity,
+                            TotalPrice = phone.Price * quantity,
                             SaleDate = DateTime.Now
                         };
 
                         _db.AddSale(sale);
 
-                        instrument.Quantity -= quantity;
-                        _db.UpdateInstrument(instrument);
+                        phone.Quantity -= quantity;
+                        _db.UpdatePhone(phone);
 
                         MessageBox.Show("✅ Продажа оформлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         LoadData();
-                        _cmbInstruments.DataSource = _db.GetInstruments();
+                        _cmbPhones.DataSource = _db.GetPhones();
                     }
                     catch (Exception ex)
                     {
@@ -125,10 +159,14 @@ namespace MusicStoreApp.Forms
                 }
             };
 
-            topPanel.Controls.Add(lblInstrument);
-            topPanel.Controls.Add(_cmbInstruments);
+            topPanel.Controls.Add(lblPhone);
+            topPanel.Controls.Add(_cmbPhones);
             topPanel.Controls.Add(lblQuantity);
             topPanel.Controls.Add(txtQuantity);
+            topPanel.Controls.Add(lblCustomer);
+            topPanel.Controls.Add(txtCustomerName);
+            topPanel.Controls.Add(lblCustomerPhone);
+            topPanel.Controls.Add(txtCustomerPhoneNum);
             topPanel.Controls.Add(btnSell);
 
             // Таблица
@@ -155,9 +193,11 @@ namespace MusicStoreApp.Forms
             _grid.RowTemplate.Height = 35;
 
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 60 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Инструмент", Width = 250 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { HeaderText = "Телефон", Width = 250 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CustomerName", HeaderText = "Покупатель", Width = 150 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "CustomerPhone", HeaderText = "Телефон покупателя", Width = 130 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SaleDate", HeaderText = "Дата", Width = 150 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Quantity", HeaderText = "Количество", Width = 130 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Quantity", HeaderText = "Количество", Width = 100 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TotalPrice", HeaderText = "Сумма", Width = 150 });
 
             // Нижняя панель
@@ -202,12 +242,15 @@ namespace MusicStoreApp.Forms
         private void LoadData()
         {
             var sales = _db.GetSales();
-            var instruments = _db.GetInstruments();
+            var phones = _db.GetPhones();
 
             var salesWithNames = sales.Select(s => new
             {
                 s.Id,
-                InstrumentName = instruments.FirstOrDefault(i => i.Id == s.InstrumentId)?.Name ?? "Неизвестно",
+                PhoneName = phones.FirstOrDefault(i => i.Id == s.PhoneId)?.Model ?? "Неизвестно",
+                Brand = phones.FirstOrDefault(i => i.Id == s.PhoneId)?.Brand ?? "",
+                s.CustomerName,
+                s.CustomerPhone,
                 s.SaleDate,
                 s.Quantity,
                 TotalPrice = s.TotalPrice.ToString("C2")

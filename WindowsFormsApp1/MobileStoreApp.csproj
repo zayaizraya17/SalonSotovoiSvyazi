@@ -114,7 +114,7 @@
     <Compile Include="Forms\DeliveriesForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\InstrumentsForm.cs">
+    <Compile Include="Forms\PhonesForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\ReportsForm.cs">
@@ -130,7 +130,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Delivery.cs" />
-    <Compile Include="Models\Instrument.cs" />
+    <Compile Include="Models\Phone.cs" />
     <Compile Include="Models\Sale.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

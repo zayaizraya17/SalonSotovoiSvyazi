@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MusicStoreApp.Data;
-using MusicStoreApp.Forms;
+using MobileStoreApp.Data;
+using MobileStoreApp.Forms;
 
-namespace MusicStoreApp
+namespace MobileStoreApp
 {
     public partial class MainForm : Form
     {
@@ -20,7 +20,7 @@ namespace MusicStoreApp
 
         private void CreateMainMenu()
         {
-            this.Text = "🎵 Music Store";
+            this.Text = "📱 Mobile Store";
             this.Size = new System.Drawing.Size(900, 600);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.BackColor = Color.FromArgb(240, 240, 240);
@@ -28,7 +28,7 @@ namespace MusicStoreApp
             // Заголовок
             var headerLabel = new Label
             {
-                Text = "🎸 MUSIC STORE ",
+                Text = "📱 MOBILE STORE",
                 Font = new Font("Segoe UI", 28, FontStyle.Bold),
                 ForeColor = Color.FromArgb(41, 128, 185),
                 AutoSize = true,
@@ -37,7 +37,7 @@ namespace MusicStoreApp
 
             var subtitleLabel = new Label
             {
-                Text = "Магазин музыкальных инструментов",
+                Text = "Салон сотовой связи",
                 Font = new Font("Segoe UI", 12),
                 ForeColor = Color.FromArgb(127, 140, 141),
                 AutoSize = true,
@@ -53,7 +53,7 @@ namespace MusicStoreApp
                 WrapContents = true
             };
 
-            AddMenuButton(mainPanel, "🎹", "Инструменты", Color.FromArgb(52, 152, 219), () => new InstrumentsForm(_db).ShowDialog());
+            AddMenuButton(mainPanel, "📱", "Телефоны", Color.FromArgb(52, 152, 219), () => new PhonesForm(_db).ShowDialog());
             AddMenuButton(mainPanel, "📦", "Поставки", Color.FromArgb(46, 204, 113), () => new DeliveriesForm(_db).ShowDialog());
             AddMenuButton(mainPanel, "💰", "Продажи", Color.FromArgb(230, 126, 34), () => new SalesForm(_db).ShowDialog());
             AddMenuButton(mainPanel, "📊", "Отчёты", Color.FromArgb(155, 89, 182), () => new ReportsForm(_db).ShowDialog());

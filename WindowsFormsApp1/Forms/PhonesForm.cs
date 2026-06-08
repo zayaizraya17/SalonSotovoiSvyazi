@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MobileStoreApp.Data;
+using MobileStoreApp.Models;
 
-namespace MusicStoreApp.Forms
+namespace MobileStoreApp.Forms
 {
-    public partial class InstrumentsForm : Form
+    public partial class PhonesForm : Form
     {
         private DatabaseHelper _db;
         private DataGridView _grid;
 
-        public InstrumentsForm(DatabaseHelper db)
+        public PhonesForm(DatabaseHelper db)
         {
             _db = db;
             InitializeComponent();
@@ -19,8 +19,8 @@ namespace MusicStoreApp.Forms
 
         private void InitializeComponent()
         {
-            this.Text = "🎹 Инструменты";
-            this.Size = new System.Drawing.Size(900, 550);
+            this.Text = "📱 Телефоны";
+            this.Size = new System.Drawing.Size(1000, 550);
             this.BackColor = Color.FromArgb(240, 240, 240);
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -47,11 +47,13 @@ namespace MusicStoreApp.Forms
             _grid.DefaultCellStyle.SelectionForeColor = Color.Black;
             _grid.RowTemplate.Height = 35;
 
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 60 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Name", HeaderText = "Название", Width = 250 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Type", HeaderText = "Тип", Width = 180 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Price", HeaderText = "Цена", Width = 130 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Quantity", HeaderText = "Количество", Width = 130 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 50 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Brand", HeaderText = "Бренд", Width = 150 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Model", HeaderText = "Модель", Width = 200 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Color", HeaderText = "Цвет", Width = 120 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Price", HeaderText = "Цена", Width = 120 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Quantity", HeaderText = "Количество", Width = 100 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "IMEI", HeaderText = "IMEI", Width = 180 });
 
             var btnPanel = new FlowLayoutPanel
             {
@@ -99,12 +101,12 @@ namespace MusicStoreApp.Forms
 
         private void LoadData()
         {
-            _grid.DataSource = _db.GetInstruments();
+            _grid.DataSource = _db.GetPhones();
         }
 
         private void AddItem()
         {
-            var form = new InstrumentEditForm(_db, null);
+            var form = new PhoneEditForm(_db, null);
             if (form.ShowDialog() == DialogResult.OK)
                 LoadData();
         }
@@ -113,8 +115,8 @@ namespace MusicStoreApp.Forms
         {
             if (_grid.CurrentRow != null)
             {
-                var item = (Instrument)_grid.CurrentRow.DataBoundItem;
-                var form = new InstrumentEditForm(_db, item);
+                var item = (Phone)_grid.CurrentRow.DataBoundItem;
+                var form = new PhoneEditForm(_db, item);
                 if (form.ShowDialog() == DialogResult.OK)
                     LoadData();
             }
@@ -124,37 +126,39 @@ namespace MusicStoreApp.Forms
         {
             if (_grid.CurrentRow != null)
             {
-                var item = (Instrument)_grid.CurrentRow.DataBoundItem;
-                if (MessageBox.Show($"Удалить {item.Name}?", "Подтверждение",
+                var item = (Phone)_grid.CurrentRow.DataBoundItem;
+                if (MessageBox.Show($"Удалить {item.Brand} {item.Model}?", "Подтверждение",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    _db.DeleteInstrument(item.Id);
+                    _db.DeletePhone(item.Id);
                     LoadData();
                 }
             }
         }
     }
 
-    public class InstrumentEditForm : Form
+    public class PhoneEditForm : Form
     {
         private DatabaseHelper _db;
-        private Instrument _item;
-        private TextBox _txtName;
-        private TextBox _txtType;
+        private Phone _item;
+        private TextBox _txtBrand;
+        private TextBox _txtModel;
+        private TextBox _txtColor;
         private TextBox _txtPrice;
         private TextBox _txtQuantity;
+        private TextBox _txtIMEI;
 
-        public InstrumentEditForm(DatabaseHelper db, Instrument item)
+        public PhoneEditForm(DatabaseHelper db, Phone item)
         {
             _db = db;
-            _item = item ?? new Instrument();
+            _item = item ?? new Phone();
             InitializeComponent();
         }
 
         private void InitializeComponent()
         {
-            this.Text = _item.Id == 0 ? "➕ Добавить инструмент" : "✏️ Изменить инструмент";
-            this.Size = new System.Drawing.Size(450, 400);
+            this.Text = _item.Id == 0 ? "➕ Добавить телефон" : "✏️ Изменить телефон";
+            this.Size = new System.Drawing.Size(450, 450);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackColor = Color.FromArgb(240, 240, 240);
@@ -165,32 +169,42 @@ namespace MusicStoreApp.Forms
             {
                 Dock = DockStyle.Fill,
                 ColumnCount = 2,
-                RowCount = 6,
+                RowCount = 7,
                 Padding = new Padding(25)
             };
 
             layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35));
             layout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65));
 
-            var lblName = new Label { Text = "Название:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
-            _txtName = new TextBox { Text = _item.Name, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblName, 0, 0);
-            layout.Controls.Add(_txtName, 1, 0);
+            var lblBrand = new Label { Text = "Бренд:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            _txtBrand = new TextBox { Text = _item.Brand, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblBrand, 0, 0);
+            layout.Controls.Add(_txtBrand, 1, 0);
 
-            var lblType = new Label { Text = "Тип:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
-            _txtType = new TextBox { Text = _item.Type, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblType, 0, 1);
-            layout.Controls.Add(_txtType, 1, 1);
+            var lblModel = new Label { Text = "Модель:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            _txtModel = new TextBox { Text = _item.Model, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblModel, 0, 1);
+            layout.Controls.Add(_txtModel, 1, 1);
+
+            var lblColor = new Label { Text = "Цвет:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            _txtColor = new TextBox { Text = _item.Color, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblColor, 0, 2);
+            layout.Controls.Add(_txtColor, 1, 2);
 
             var lblPrice = new Label { Text = "Цена:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
             _txtPrice = new TextBox { Text = _item.Price.ToString(), Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblPrice, 0, 2);
-            layout.Controls.Add(_txtPrice, 1, 2);
+            layout.Controls.Add(lblPrice, 0, 3);
+            layout.Controls.Add(_txtPrice, 1, 3);
 
             var lblQuantity = new Label { Text = "Количество:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
             _txtQuantity = new TextBox { Text = _item.Quantity.ToString(), Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblQuantity, 0, 3);
-            layout.Controls.Add(_txtQuantity, 1, 3);
+            layout.Controls.Add(lblQuantity, 0, 4);
+            layout.Controls.Add(_txtQuantity, 1, 4);
+
+            var lblIMEI = new Label { Text = "IMEI:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            _txtIMEI = new TextBox { Text = _item.IMEI, Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblIMEI, 0, 5);
+            layout.Controls.Add(_txtIMEI, 1, 5);
 
             var btnPanel = new FlowLayoutPanel
             {
@@ -232,7 +246,7 @@ namespace MusicStoreApp.Forms
             btnPanel.Controls.Add(btnCancel);
             btnPanel.Controls.Add(btnSave);
 
-            layout.Controls.Add(btnPanel, 0, 5);
+            layout.Controls.Add(btnPanel, 0, 6);
             layout.SetColumnSpan(btnPanel, 2);
 
             this.Controls.Add(layout);
@@ -244,15 +258,17 @@ namespace MusicStoreApp.Forms
         {
             try
             {
-                _item.Name = _txtName.Text;
-                _item.Type = _txtType.Text;
+                _item.Brand = _txtBrand.Text;
+                _item.Model = _txtModel.Text;
+                _item.Color = _txtColor.Text;
                 _item.Price = decimal.Parse(_txtPrice.Text);
                 _item.Quantity = int.Parse(_txtQuantity.Text);
+                _item.IMEI = _txtIMEI.Text;
 
                 if (_item.Id == 0)
-                    _db.AddInstrument(_item);
+                    _db.AddPhone(_item);
                 else
-                    _db.UpdateInstrument(_item);
+                    _db.UpdatePhone(_item);
 
                 this.DialogResult = DialogResult.OK;
                 this.Close();

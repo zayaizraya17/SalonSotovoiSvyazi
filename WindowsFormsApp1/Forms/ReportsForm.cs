@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MusicStoreApp.Data;
+using MobileStoreApp.Data;
 
-namespace MusicStoreApp.Forms
+namespace MobileStoreApp.Forms
 {
     public partial class ReportsForm : Form
     {
@@ -33,7 +33,7 @@ namespace MusicStoreApp.Forms
                 BackColor = Color.FromArgb(250, 250, 250)
             };
 
-            var btnSalesReport = CreateStyledButton(" Отчёт по продажам", Color.FromArgb(155, 89, 182), (s, e) => LoadSalesReport());
+            var btnSalesReport = CreateStyledButton("📈 Отчёт по продажам", Color.FromArgb(155, 89, 182), (s, e) => LoadSalesReport());
             btnPanel.Controls.Add(btnSalesReport);
 
             // Таблица
@@ -68,7 +68,7 @@ namespace MusicStoreApp.Forms
                 BackColor = Color.FromArgb(250, 250, 250)
             };
 
-            var btnClose = CreateStyledButton(" Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
+            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
             bottomPanel.Controls.Add(btnClose);
 
             this.Controls.Add(_grid);
