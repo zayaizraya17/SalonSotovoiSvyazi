@@ -116,8 +116,8 @@ namespace MobileStoreApp.Data
             return sales.GroupBy(s => s.PhoneId)
                 .Select(g => new
                 {
-                    Phone = phones.FirstOrDefault(i => i.Id == g.Key)?.Model ?? "Неизвестно",
-                    Brand = phones.FirstOrDefault(i => i.Id == g.Key)?.Brand ?? "",
+                    Phone = phones.FirstOrDefault(i => i.Id == g.Key).Model ?? "Неизвестно",
+                    Brand = phones.FirstOrDefault(i => i.Id == g.Key).Brand ?? "",
                     Count = g.Count(),
                     Total = g.Sum(x => x.TotalPrice)
                 }).ToList();
@@ -143,8 +143,8 @@ namespace MobileStoreApp.Data
                 .Select(g => new
                 {
                     PhoneId = g.Key,
-                    Brand = phones.FirstOrDefault(i => i.Id == g.Key)?.Brand ?? "",
-                    Model = phones.FirstOrDefault(i => i.Id == g.Key)?.Model ?? "Неизвестно",
+                    Brand = phones.FirstOrDefault(i => i.Id == g.Key).Brand ?? "",
+                    Model = phones.FirstOrDefault(i => i.Id == g.Key).Model ?? "Неизвестно",
                     QuantitySold = g.Sum(x => x.Quantity),
                     SalesCount = g.Count(),
                     TotalRevenue = g.Sum(x => x.TotalPrice),
