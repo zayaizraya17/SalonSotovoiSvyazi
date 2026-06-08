@@ -30,7 +30,7 @@ namespace MobileStoreApp.Forms
             var topPanel = new Panel
             {
                 Dock = DockStyle.Top,
-                Height = 120,
+                Height = 160,
                 BackColor = Color.FromArgb(250, 250, 250),
                 Padding = new Padding(20, 15, 20, 15)
             };
@@ -41,17 +41,17 @@ namespace MobileStoreApp.Forms
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
-                Location = new Point(20, 25)
+                Location = new Point(20, 20)
             };
 
             _cmbPhones = new ComboBox
             {
-                Width = 350,
+                Width = 500,
                 DropDownStyle = ComboBoxStyle.DropDownList,
                 Font = new Font("Segoe UI", 10),
-                Location = new Point(120, 20)
+                Location = new Point(120, 15)
             };
-            _cmbPhones.DisplayMember = "Model";
+            _cmbPhones.DisplayMember = "FullName";
             _cmbPhones.ValueMember = "Id";
             _cmbPhones.DataSource = _db.GetPhones();
 
@@ -61,7 +61,7 @@ namespace MobileStoreApp.Forms
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
-                Location = new Point(490, 25)
+                Location = new Point(20, 60)
             };
 
             var txtQuantity = new TextBox
@@ -69,7 +69,7 @@ namespace MobileStoreApp.Forms
                 Width = 80,
                 Text = "1",
                 Font = new Font("Segoe UI", 10),
-                Location = new Point(560, 20)
+                Location = new Point(120, 55)
             };
 
             var lblCustomer = new Label
@@ -78,14 +78,14 @@ namespace MobileStoreApp.Forms
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
-                Location = new Point(20, 65)
+                Location = new Point(230, 60)
             };
 
             var txtCustomerName = new TextBox
             {
                 Width = 200,
                 Font = new Font("Segoe UI", 10),
-                Location = new Point(120, 60)
+                Location = new Point(330, 55)
             };
 
             var lblCustomerPhone = new Label
@@ -94,27 +94,27 @@ namespace MobileStoreApp.Forms
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 ForeColor = Color.FromArgb(44, 62, 80),
                 AutoSize = true,
-                Location = new Point(340, 65)
+                Location = new Point(560, 60)
             };
 
             var txtCustomerPhoneNum = new TextBox
             {
                 Width = 150,
                 Font = new Font("Segoe UI", 10),
-                Location = new Point(420, 60)
+                Location = new Point(640, 55)
             };
 
             var btnSell = new Button
             {
                 Text = "💰 Продать",
-                Width = 150,
-                Height = 40,
-                Font = new Font("Segoe UI", 10, FontStyle.Bold),
+                Width = 160,
+                Height = 45,
+                Font = new Font("Segoe UI", 11, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
                 BackColor = Color.FromArgb(230, 126, 34),
                 ForeColor = Color.White,
                 Cursor = Cursors.Hand,
-                Location = new Point(660, 55)
+                Location = new Point(820, 50)
             };
             btnSell.FlatAppearance.BorderSize = 0;
             btnSell.FlatAppearance.MouseOverBackColor = Color.FromArgb(211, 84, 0);
