@@ -1,0 +1,291 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|c:\\users\\liana\\desktop\\musicapp\\windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\reportsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\salesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\salesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\deliveriesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\deliveriesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\instrumentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\instrumentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\instrumentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\instrumentsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|WindowsFormsApp1.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|WindowsFormsApp1.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\deliveriesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\deliveriesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:models\\sale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\forms\\salesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:forms\\salesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\models\\instrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:models\\instrument.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:models\\delivery.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{27071670-5748-4CD7-BD07-2E120556B7FC}|MusicStoreApp.csproj|solutionrelative:mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "SalesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\SalesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\SalesForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\SalesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Forms\\SalesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T14:43:04.463Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Delivery.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Delivery.cs",
+              "RelativeDocumentMoniker": "Models\\Delivery.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Delivery.cs",
+              "RelativeToolTip": "Models\\Delivery.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T14:37:37.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Instrument.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Instrument.cs",
+              "RelativeDocumentMoniker": "Models\\Instrument.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Instrument.cs",
+              "RelativeToolTip": "Models\\Instrument.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T14:36:47.977Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ReportsForm.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\ReportsForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ReportsForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\ReportsForm.cs",
+              "RelativeToolTip": "Forms\\ReportsForm.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAADwv2YAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:49:13.155Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SalesForm.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\SalesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\SalesForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\SalesForm.cs",
+              "RelativeToolTip": "Forms\\SalesForm.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAADwv9oAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:48:46.459Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DeliveriesForm.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\DeliveriesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DeliveriesForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\DeliveriesForm.cs",
+              "RelativeToolTip": "Forms\\DeliveriesForm.cs",
+              "ViewState": "AgIAAKsAAAAAAAAAAADwv9wAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:48:25.701Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InstrumentsForm.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\InstrumentsForm.cs",
+              "RelativeDocumentMoniker": "Forms\\InstrumentsForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\InstrumentsForm.cs",
+              "RelativeToolTip": "Forms\\InstrumentsForm.cs",
+              "ViewState": "AgIAANgAAAAAAAAAAADwvwkBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:48:02.706Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:47:33.377Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.Designer.cs",
+              "RelativeDocumentMoniker": "MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.Designer.cs",
+              "RelativeToolTip": "MainForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:47:25.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.cs",
+              "RelativeToolTip": "MainForm.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAywHcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:47:17.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeliveriesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\DeliveriesForm.cs",
+              "RelativeDocumentMoniker": "Forms\\DeliveriesForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\DeliveriesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Forms\\DeliveriesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T15:23:46.26Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InstrumentsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\InstrumentsForm.cs",
+              "RelativeDocumentMoniker": "Forms\\InstrumentsForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\InstrumentsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Forms\\InstrumentsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T15:23:51.012Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ReportsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\ReportsForm.cs",
+              "RelativeDocumentMoniker": "Forms\\ReportsForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Forms\\ReportsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Forms\\ReportsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T16:06:31.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:47:11.94Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Data\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "Data\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Data\\DatabaseHelper.cs",
+              "RelativeToolTip": "Data\\DatabaseHelper.cs",
+              "ViewState": "AgIAADgAAAAAAAAAAAA6wDkAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:46:34.183Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Sale.cs",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Sale.cs",
+              "RelativeDocumentMoniker": "Models\\Sale.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Models\\Sale.cs",
+              "RelativeToolTip": "Models\\Sale.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:46:04.116Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\liana\\Desktop\\musicapp\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-06T13:41:26.116Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
