@@ -4,29 +4,48 @@
 *.exe
 *.dll
 *.pdb
-*.userprefs
-*.suo
 *.user
 *.aps
 *.ncb
-*.ilk
-*.idb
-*.ipch
-*.tlog
-*.log
+*.suo
+*.tlb
+*.tli
 *.tmp
+*.log
+*.ilk
+*.manifest
+*.res
+*.pch
+*.ipch
+*.iobj
+*.ipdb
+*.builds
+*.baml
 
 # Dependencies
 packages/
 bin/
 obj/
+Debug/
+Release/
+x64/
+x86/
+*.userosscache
+*.sln.docstates
 
-# Visual Studio files
+# IDE
 .vs/
-*.VC.db
-*.VC.VC.opendb
+*.userprefs
+*.[Rr]eSharper
+*.DotSettings.user
+*.resharper
+*.[Pp]rivate.Cache
 
-# User-specific files
-.userprefs
-.vsconfig
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Icon?
+desktop.ini
+$RECYCLE.BIN/
 ```
