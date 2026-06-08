@@ -12,6 +12,13 @@ namespace MobileStoreApp.Forms
         private DatabaseHelper _db;
         private DataGridView _grid;
         private ComboBox _cmbPhones;
+        private readonly Color _primaryColor = Color.FromArgb(108, 92, 231); // Фиолетовый
+        private readonly Color _secondaryColor = Color.FromArgb(59, 130, 246); // Голубой
+        private readonly Color _accentPink = Color.FromArgb(236, 72, 153); // Розовый
+        private readonly Color _accentPurple = Color.FromArgb(139, 92, 246); // Светло-фиолетовый
+        private readonly Color _accentCyan = Color.FromArgb(34, 211, 238); // Голубой циан
+        private readonly Color _bgColor = Color.FromArgb(250, 245, 255); // Светлый фон с розовым оттенком
+        private readonly Color _textDark = Color.FromArgb(76, 29, 149); // Тёмно-фиолетовый текст
 
         public SalesForm(DatabaseHelper db)
         {
@@ -23,7 +30,7 @@ namespace MobileStoreApp.Forms
         {
             this.Text = "💰 Продажи";
             this.Size = new System.Drawing.Size(1100, 600);
-            this.BackColor = Color.FromArgb(240, 240, 240);
+            this.BackColor = _bgColor;
             this.StartPosition = FormStartPosition.CenterScreen;
 
             // Верхняя панель с выбором телефона
@@ -31,7 +38,7 @@ namespace MobileStoreApp.Forms
             {
                 Dock = DockStyle.Top,
                 Height = 160,
-                BackColor = Color.FromArgb(250, 250, 250),
+                BackColor = Color.FromArgb(253, 240, 250),
                 Padding = new Padding(20, 15, 20, 15),
                 AutoSize = true,
                 AutoSizeMode = AutoSizeMode.GrowAndShrink
@@ -41,7 +48,7 @@ namespace MobileStoreApp.Forms
             {
                 Text = "Телефон:",
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                ForeColor = Color.FromArgb(44, 62, 80),
+                ForeColor = _textDark,
                 AutoSize = true,
                 Location = new Point(20, 20)
             };
@@ -61,7 +68,7 @@ namespace MobileStoreApp.Forms
             {
                 Text = "Кол-во:",
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                ForeColor = Color.FromArgb(44, 62, 80),
+                ForeColor = _textDark,
                 AutoSize = true,
                 Location = new Point(20, 60)
             };
@@ -78,7 +85,7 @@ namespace MobileStoreApp.Forms
             {
                 Text = "Покупатель:",
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                ForeColor = Color.FromArgb(44, 62, 80),
+                ForeColor = _textDark,
                 AutoSize = true,
                 Location = new Point(230, 60)
             };
@@ -94,7 +101,7 @@ namespace MobileStoreApp.Forms
             {
                 Text = "Телефон:",
                 Font = new Font("Segoe UI", 11, FontStyle.Bold),
-                ForeColor = Color.FromArgb(44, 62, 80),
+                ForeColor = _textDark,
                 AutoSize = true,
                 Location = new Point(560, 60)
             };
@@ -122,10 +129,10 @@ namespace MobileStoreApp.Forms
                 Height = 70,
                 FlowDirection = FlowDirection.RightToLeft,
                 Padding = new Padding(10),
-                BackColor = Color.FromArgb(250, 250, 250)
+                BackColor = Color.FromArgb(253, 240, 250)
             };
 
-            var btnSell = CreateStyledButton("💰 Продать", Color.FromArgb(230, 126, 34), (s, e) =>
+            var btnSell = CreateStyledButton("💰 Продать", _accentCyan, (s, e) =>
             {
                 if (_cmbPhones.SelectedItem != null)
                 {
@@ -183,7 +190,7 @@ namespace MobileStoreApp.Forms
                 }
             });
 
-            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
+            var btnClose = CreateStyledButton("❌ Закрыть", _accentPurple, (s, e) => this.Close());
             
             btnPanel.Controls.Add(btnClose);
             btnPanel.Controls.Add(btnSell);
@@ -202,13 +209,13 @@ namespace MobileStoreApp.Forms
             };
 
             _grid.EnableHeadersVisualStyles = false;
-            _grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(230, 126, 34);
+            _grid.ColumnHeadersDefaultCellStyle.BackColor = _accentCyan;
             _grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             _grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             _grid.ColumnHeadersHeight = 40;
             _grid.DefaultCellStyle.Font = new Font("Segoe UI", 10);
-            _grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(250, 219, 179);
-            _grid.DefaultCellStyle.SelectionForeColor = Color.Black;
+            _grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(153, 229, 236);
+            _grid.DefaultCellStyle.SelectionForeColor = _textDark;
             _grid.RowTemplate.Height = 35;
 
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 60 });

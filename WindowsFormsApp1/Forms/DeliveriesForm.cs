@@ -12,6 +12,13 @@ namespace MobileStoreApp.Forms
         private DatabaseHelper _db;
         private DataGridView _grid;
         private Panel _headerPanel;
+        private readonly Color _primaryColor = Color.FromArgb(108, 92, 231); // Фиолетовый
+        private readonly Color _secondaryColor = Color.FromArgb(59, 130, 246); // Голубой
+        private readonly Color _accentPink = Color.FromArgb(236, 72, 153); // Розовый
+        private readonly Color _accentPurple = Color.FromArgb(139, 92, 246); // Светло-фиолетовый
+        private readonly Color _accentCyan = Color.FromArgb(34, 211, 238); // Голубой циан
+        private readonly Color _bgColor = Color.FromArgb(250, 245, 255); // Светлый фон с розовым оттенком
+        private readonly Color _textDark = Color.FromArgb(76, 29, 149); // Тёмно-фиолетовый текст
 
         public DeliveriesForm(DatabaseHelper db)
         {
@@ -25,7 +32,7 @@ namespace MobileStoreApp.Forms
             this.Size = new System.Drawing.Size(1100, 650);
             this.StartPosition = FormStartPosition.CenterScreen;
             this.MinimumSize = new Size(900, 550);
-            this.BackColor = Color.FromArgb(236, 240, 241);
+            this.BackColor = _bgColor;
 
             // Верхняя панель с градиентом
             _headerPanel = new Panel
@@ -50,7 +57,7 @@ namespace MobileStoreApp.Forms
             {
                 Text = "Приём товаров от поставщиков",
                 Font = new Font("Segoe UI", 11),
-                ForeColor = Color.FromArgb(174, 236, 205),
+                ForeColor = Color.FromArgb(200, 230, 255),
                 AutoSize = true,
                 Location = new Point(35, 52),
                 BackColor = Color.Transparent
@@ -75,18 +82,18 @@ namespace MobileStoreApp.Forms
             };
 
             _grid.EnableHeadersVisualStyles = false;
-            _grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(46, 204, 113);
+            _grid.ColumnHeadersDefaultCellStyle.BackColor = _accentPink;
             _grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             _grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold);
             _grid.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             _grid.ColumnHeadersHeight = 45;
             _grid.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             _grid.DefaultCellStyle.Padding = new Padding(5);
-            _grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(174, 236, 205);
-            _grid.DefaultCellStyle.SelectionForeColor = Color.FromArgb(44, 62, 80);
+            _grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(244, 114, 182);
+            _grid.DefaultCellStyle.SelectionForeColor = _textDark;
             _grid.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleLeft;
             _grid.RowTemplate.Height = 42;
-            _grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(250, 252, 253);
+            _grid.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(253, 242, 248);
 
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 60 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SupplierName", HeaderText = "Поставщик", Width = 180 });
@@ -102,11 +109,11 @@ namespace MobileStoreApp.Forms
                 Height = 80,
                 FlowDirection = FlowDirection.RightToLeft,
                 Padding = new Padding(20, 15, 20, 15),
-                BackColor = Color.FromArgb(250, 252, 253)
+                BackColor = Color.FromArgb(253, 242, 248)
             };
 
-            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
-            var btnAdd = CreateStyledButton("➕ Добавить поставку", Color.FromArgb(46, 204, 113), (s, e) => AddItem());
+            var btnClose = CreateStyledButton("❌ Закрыть", _accentPurple, (s, e) => this.Close());
+            var btnAdd = CreateStyledButton("➕ Добавить поставку", _accentPink, (s, e) => AddItem());
 
             btnPanel.Controls.Add(btnClose);
             btnPanel.Controls.Add(btnAdd);
@@ -124,8 +131,8 @@ namespace MobileStoreApp.Forms
             Rectangle rect = new Rectangle(0, 0, _headerPanel.Width, _headerPanel.Height);
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 rect,
-                Color.FromArgb(39, 174, 96),
-                Color.FromArgb(46, 204, 113),
+                _accentPink,
+                _accentPurple,
                 LinearGradientMode.Horizontal))
             {
                 g.FillRectangle(brush, rect);
