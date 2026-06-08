@@ -125,7 +125,12 @@ namespace MobileStoreApp.Forms
                     try
                     {
                         var phone = (Phone)_cmbPhones.SelectedItem;
-                        int quantity = int.Parse(txtQuantity.Text);
+                        
+                        if (!int.TryParse(txtQuantity.Text, out int quantity) || quantity <= 0)
+                        {
+                            MessageBox.Show("❌ Введите корректное количество!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
 
                         if (quantity > phone.Quantity)
                         {
@@ -133,11 +138,17 @@ namespace MobileStoreApp.Forms
                             return;
                         }
 
+                        if (string.IsNullOrWhiteSpace(txtCustomerName.Text))
+                        {
+                            MessageBox.Show("❌ Введите имя покупателя!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+
                         var sale = new Sale
                         {
                             PhoneId = phone.Id,
-                            CustomerName = txtCustomerName.Text,
-                            CustomerPhone = txtCustomerPhoneNum.Text,
+                            CustomerName = txtCustomerName.Text.Trim(),
+                            CustomerPhone = txtCustomerPhoneNum.Text.Trim(),
                             Quantity = quantity,
                             TotalPrice = phone.Price * quantity,
                             SaleDate = DateTime.Now
@@ -148,8 +159,14 @@ namespace MobileStoreApp.Forms
                         phone.Quantity -= quantity;
                         _db.UpdatePhone(phone);
 
-                        MessageBox.Show("✅ Продажа оформлена!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show($"✅ Продажа оформлена!\nСумма: {sale.TotalPrice:C2}", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
+                        txtQuantity.Text = "1";
+                        txtCustomerName.Text = "";
+                        txtCustomerPhoneNum.Text = "";
+                        
                         LoadData();
+                        _cmbPhones.DataSource = null;
                         _cmbPhones.DataSource = _db.GetPhones();
                     }
                     catch (Exception ex)
@@ -242,16 +259,16 @@ namespace MobileStoreApp.Forms
         private void LoadData()
         {
             var sales = _db.GetSales();
-            var phones = _db.GetPhones();
+            var phones = _db.GetPhones().ToDictionary(p => p.Id, p => p);
 
             var salesWithNames = sales.Select(s => new
             {
                 s.Id,
-                PhoneName = phones.FirstOrDefault(i => i.Id == s.PhoneId)?.Model ?? "Неизвестно",
-                Brand = phones.FirstOrDefault(i => i.Id == s.PhoneId)?.Brand ?? "",
+                PhoneName = phones.ContainsKey(s.PhoneId) ? $"{phones[s.PhoneId].Brand} {phones[s.PhoneId].Model}" : "Неизвестно",
+                Brand = phones.ContainsKey(s.PhoneId) ? phones[s.PhoneId].Brand : "",
                 s.CustomerName,
                 s.CustomerPhone,
-                s.SaleDate,
+                SaleDate = s.SaleDate.ToString("dd.MM.yyyy HH:mm"),
                 s.Quantity,
                 TotalPrice = s.TotalPrice.ToString("C2")
             }).ToList();
