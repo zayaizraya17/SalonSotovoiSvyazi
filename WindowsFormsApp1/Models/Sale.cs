@@ -11,5 +11,10 @@ namespace MobileStoreApp.Models
         public string CustomerPhone { get; set; }
         public int Quantity { get; set; }
         public decimal TotalPrice { get; set; }
+        
+        /// <summary>
+        /// Вычисляет среднюю цену за единицу товара
+        /// </summary>
+        public decimal UnitPrice => Quantity > 0 ? TotalPrice / Quantity : 0;
     }
 }

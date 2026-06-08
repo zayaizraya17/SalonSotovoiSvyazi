@@ -1,51 +1,54 @@
 ```
 # Build artifacts
-*.obj
+obj/
+bin/
 *.exe
 *.dll
 *.pdb
-*.user
-*.aps
-*.ncb
-*.suo
-*.tlb
-*.tli
-*.tmp
-*.log
-*.ilk
-*.manifest
-*.res
-*.pch
-*.ipch
-*.iobj
-*.ipdb
-*.builds
-*.baml
-
-# Dependencies
+*.userprefs
+*.cache
+*.compiled
+*.nupkg
+*.snk
+*.sn
 packages/
-bin/
-obj/
-Debug/
-Release/
-x64/
-x86/
+node_modules/
+
+# IDE files
+.vs/
+.vscode/
+.idea/
+*.suo
+*.user
 *.userosscache
 *.sln.docstates
 
-# IDE
-.vs/
-*.userprefs
-*.[Rr]eSharper
-*.DotSettings.user
-*.resharper
-*.[Pp]rivate.Cache
-
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
 ehthumbs.db
 Icon?
 desktop.ini
-$RECYCLE.BIN/
+
+# Log files
+*.log
+
+# Environment variables
+.env
+.env.local
+*.env.*
+
+# Testing
+coverage/
+*.coverage
+htmlcov/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.old
+
+# Windows Forms designer files
+*.Designer.cs
 ```
