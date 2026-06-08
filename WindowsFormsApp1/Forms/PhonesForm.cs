@@ -12,16 +12,16 @@ namespace MobileStoreApp.Forms
         private DatabaseHelper _db;
         private DataGridView _grid;
         private Panel _headerPanel;
-        private readonly Color _primaryColor = Color.FromArgb(26, 95, 160);
-        private readonly Color _secondaryColor = Color.FromArgb(52, 152, 219);
-        private readonly Color _accentGreen = Color.FromArgb(39, 174, 96);
-        private readonly Color _accentOrange = Color.FromArgb(211, 84, 0);
-        private readonly Color _accentRed = Color.FromArgb(231, 76, 60);
-        private readonly Color _accentGray = Color.FromArgb(149, 165, 166);
-        private readonly Color _bgColor = Color.FromArgb(245, 247, 249);
+        private readonly Color _primaryColor = Color.FromArgb(108, 92, 231); // Фиолетовый
+        private readonly Color _secondaryColor = Color.FromArgb(59, 130, 246); // Голубой
+        private readonly Color _accentPink = Color.FromArgb(236, 72, 153); // Розовый
+        private readonly Color _accentPurple = Color.FromArgb(139, 92, 246); // Светло-фиолетовый
+        private readonly Color _accentCyan = Color.FromArgb(34, 211, 238); // Голубой циан
+        private readonly Color _accentRed = Color.FromArgb(239, 68, 68); // Красный (в тон)
+        private readonly Color _bgColor = Color.FromArgb(250, 245, 255); // Светлый фон с розовым оттенком
         private readonly Color _cardBg = Color.White;
-        private readonly Color _textDark = Color.FromArgb(44, 62, 80);
-        private readonly Color _textLight = Color.FromArgb(127, 140, 141);
+        private readonly Color _textDark = Color.FromArgb(76, 29, 149); // Тёмно-фиолетовый текст
+        private readonly Color _textLight = Color.FromArgb(167, 139, 250); // Светло-фиолетовый текст
 
         public PhonesForm(DatabaseHelper db)
         {
@@ -147,10 +147,10 @@ namespace MobileStoreApp.Forms
                 BackColor = Color.FromArgb(250, 252, 253)
             };
 
-            var btnClose = CreateStyledButton("❌ Закрыть", _accentGray, (s, e) => this.Close());
-            var btnDelete = CreateStyledButton("🗑️ Удалить", _accentRed, (s, e) => DeleteItem());
-            var btnEdit = CreateStyledButton("✏️ Изменить", _accentOrange, (s, e) => EditItem());
-            var btnAdd = CreateStyledButton("➕ Добавить телефон", _accentGreen, (s, e) => AddItem());
+            var btnClose = CreateStyledButton("❌ Закрыть", _accentRed, (s, e) => this.Close());
+            var btnDelete = CreateStyledButton("🗑️ Удалить", _accentPink, (s, e) => DeleteItem());
+            var btnEdit = CreateStyledButton("✏️ Изменить", _accentPurple, (s, e) => EditItem());
+            var btnAdd = CreateStyledButton("➕ Добавить телефон", _accentCyan, (s, e) => AddItem());
 
             btnPanel.Controls.Add(btnClose);
             btnPanel.Controls.Add(btnDelete);
@@ -367,12 +367,12 @@ namespace MobileStoreApp.Forms
                 DialogResult = DialogResult.OK,
                 Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(39, 174, 96),
+                BackColor = _accentCyan,
                 ForeColor = Color.White,
                 Cursor = Cursors.Hand
             };
             btnSave.FlatAppearance.BorderSize = 0;
-            btnSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(32, 145, 80);
+            btnSave.FlatAppearance.MouseOverBackColor = Color.FromArgb(21, 183, 207);
             btnSave.Click += BtnSave_Click;
             
             // Скругляем кнопку сохранения
@@ -392,12 +392,12 @@ namespace MobileStoreApp.Forms
                 DialogResult = DialogResult.Cancel,
                 Font = new Font("Segoe UI Semibold", 11, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(149, 165, 166),
+                BackColor = _accentPurple,
                 ForeColor = Color.White,
                 Cursor = Cursors.Hand
             };
             btnCancel.FlatAppearance.BorderSize = 0;
-            btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(127, 140, 141);
+            btnCancel.FlatAppearance.MouseOverBackColor = Color.FromArgb(124, 80, 221);
             
             // Скругляем кнопку отмены
             System.Drawing.Drawing2D.GraphicsPath cancelPath = new System.Drawing.Drawing2D.GraphicsPath();

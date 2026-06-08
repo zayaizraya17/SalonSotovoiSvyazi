@@ -11,15 +11,15 @@ namespace MobileStoreApp
     {
         private DatabaseHelper _db;
         private Panel _headerPanel;
-        private readonly Color _primaryColor = Color.FromArgb(26, 95, 160);
-        private readonly Color _secondaryColor = Color.FromArgb(52, 152, 219);
-        private readonly Color _accentGreen = Color.FromArgb(39, 174, 96);
-        private readonly Color _accentOrange = Color.FromArgb(211, 84, 0);
-        private readonly Color _accentPurple = Color.FromArgb(142, 68, 173);
-        private readonly Color _bgColor = Color.FromArgb(245, 247, 249);
+        private readonly Color _primaryColor = Color.FromArgb(108, 92, 231); // Фиолетовый
+        private readonly Color _secondaryColor = Color.FromArgb(59, 130, 246); // Голубой
+        private readonly Color _accentPink = Color.FromArgb(236, 72, 153); // Розовый
+        private readonly Color _accentPurple = Color.FromArgb(139, 92, 246); // Светло-фиолетовый
+        private readonly Color _accentCyan = Color.FromArgb(34, 211, 238); // Голубой циан
+        private readonly Color _bgColor = Color.FromArgb(250, 245, 255); // Светлый фон с розовым оттенком
         private readonly Color _cardBg = Color.White;
-        private readonly Color _textDark = Color.FromArgb(44, 62, 80);
-        private readonly Color _textLight = Color.FromArgb(127, 140, 141);
+        private readonly Color _textDark = Color.FromArgb(76, 29, 149); // Тёмно-фиолетовый текст
+        private readonly Color _textLight = Color.FromArgb(167, 139, 250); // Светло-фиолетовый текст
 
         public MainForm()
         {
@@ -83,8 +83,8 @@ namespace MobileStoreApp
             };
 
             AddMenuButton(mainPanel, "📱", "Телефоны", "Управление ассортиментом товаров", _secondaryColor, () => new PhonesForm(_db).ShowDialog());
-            AddMenuButton(mainPanel, "📦", "Поставки", "Приём товаров от поставщиков", _accentGreen, () => new DeliveriesForm(_db).ShowDialog());
-            AddMenuButton(mainPanel, "💰", "Продажи", "Оформление продаж клиентам", _accentOrange, () => new SalesForm(_db).ShowDialog());
+            AddMenuButton(mainPanel, "📦", "Поставки", "Приём товаров от поставщиков", _accentPink, () => new DeliveriesForm(_db).ShowDialog());
+            AddMenuButton(mainPanel, "💰", "Продажи", "Оформление продаж клиентам", _accentCyan, () => new SalesForm(_db).ShowDialog());
             AddMenuButton(mainPanel, "📊", "Отчёты", "Аналитика и статистика продаж", _accentPurple, () => new ReportsForm(_db).ShowDialog());
 
             _headerPanel.Controls.Add(headerLabel);
@@ -108,7 +108,7 @@ namespace MobileStoreApp
             {
                 // Добавляем эффект свечения
                 ColorBlend blend = new ColorBlend();
-                blend.Colors = new Color[] { _primaryColor, _secondaryColor, Color.FromArgb(64, 169, 228) };
+                blend.Colors = new Color[] { _primaryColor, _secondaryColor, Color.FromArgb(167, 139, 250) };
                 blend.Positions = new float[] { 0.0f, 0.7f, 1.0f };
                 brush.InterpolationColors = blend;
                 

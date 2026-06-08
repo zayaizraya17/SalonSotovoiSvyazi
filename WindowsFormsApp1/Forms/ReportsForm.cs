@@ -9,8 +9,13 @@ namespace MobileStoreApp.Forms
     {
         private DatabaseHelper _db;
         private DataGridView _grid;
-        private readonly Color _bgColor = Color.FromArgb(245, 247, 249);
-        private readonly Color _textDark = Color.FromArgb(44, 62, 80);
+        private readonly Color _primaryColor = Color.FromArgb(108, 92, 231); // Фиолетовый
+        private readonly Color _secondaryColor = Color.FromArgb(59, 130, 246); // Голубой
+        private readonly Color _accentPink = Color.FromArgb(236, 72, 153); // Розовый
+        private readonly Color _accentPurple = Color.FromArgb(139, 92, 246); // Светло-фиолетовый
+        private readonly Color _accentCyan = Color.FromArgb(34, 211, 238); // Голубой циан
+        private readonly Color _bgColor = Color.FromArgb(250, 245, 255); // Светлый фон с розовым оттенком
+        private readonly Color _textDark = Color.FromArgb(76, 29, 149); // Тёмно-фиолетовый текст
 
         public ReportsForm(DatabaseHelper db)
         {
@@ -22,7 +27,7 @@ namespace MobileStoreApp.Forms
         {
             this.Text = "📊 Отчёты";
             this.Size = new System.Drawing.Size(1100, 700);
-            this.BackColor = Color.FromArgb(245, 247, 249);
+            this.BackColor = _bgColor;
             this.StartPosition = FormStartPosition.CenterScreen;
             this.MinimumSize = new Size(900, 600);
 
@@ -33,11 +38,11 @@ namespace MobileStoreApp.Forms
                 Height = 120,
                 FlowDirection = FlowDirection.LeftToRight,
                 Padding = new Padding(30, 15, 20, 15),
-                BackColor = Color.FromArgb(250, 252, 253)
+                BackColor = Color.FromArgb(253, 242, 248)
             };
 
-            var btnSalesReport = CreateStyledButton("📈 Отчёт по продажам", Color.FromArgb(155, 89, 182), (s, e) => LoadSalesReport());
-            var btnInventory = CreateStyledButton("📦 Остатки товаров", Color.FromArgb(52, 152, 219), (s, e) => LoadInventoryReport());
+            var btnSalesReport = CreateStyledButton("📈 Отчёт по продажам", _accentPurple, (s, e) => LoadSalesReport());
+            var btnInventory = CreateStyledButton("📦 Остатки товаров", _secondaryColor, (s, e) => LoadInventoryReport());
             btnPanel.Controls.Add(btnSalesReport);
             btnPanel.Controls.Add(btnInventory);
             
@@ -91,7 +96,7 @@ namespace MobileStoreApp.Forms
                 Text = "Применить фильтр",
                 Font = new Font("Segoe UI Semibold", 10, FontStyle.Bold),
                 FlatStyle = FlatStyle.Flat,
-                BackColor = Color.FromArgb(39, 174, 96),
+                BackColor = _accentPink,
                 ForeColor = Color.White,
                 Size = new Size(140, 35),
                 Location = new Point(420, 8),
@@ -119,13 +124,13 @@ namespace MobileStoreApp.Forms
             };
 
             _grid.EnableHeadersVisualStyles = false;
-            _grid.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(155, 89, 182);
+            _grid.ColumnHeadersDefaultCellStyle.BackColor = _accentPurple;
             _grid.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             _grid.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 10, FontStyle.Bold);
             _grid.ColumnHeadersHeight = 40;
             _grid.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             _grid.DefaultCellStyle.SelectionBackColor = Color.FromArgb(215, 189, 226);
-            _grid.DefaultCellStyle.SelectionForeColor = Color.Black;
+            _grid.DefaultCellStyle.SelectionForeColor = _textDark;
             _grid.RowTemplate.Height = 35;
 
             // Нижняя панель
@@ -135,10 +140,10 @@ namespace MobileStoreApp.Forms
                 Height = 70,
                 FlowDirection = FlowDirection.RightToLeft,
                 Padding = new Padding(10),
-                BackColor = Color.FromArgb(250, 250, 250)
+                BackColor = Color.FromArgb(253, 242, 248)
             };
 
-            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
+            var btnClose = CreateStyledButton("❌ Закрыть", _accentPurple, (s, e) => this.Close());
             bottomPanel.Controls.Add(btnClose);
 
             this.Controls.Add(_grid);
