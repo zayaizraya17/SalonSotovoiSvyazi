@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
-using MusicStoreApp.Data;
-using MusicStoreApp.Models;
+using MobileStoreApp.Data;
+using MobileStoreApp.Models;
 
-namespace MusicStoreApp.Forms
+namespace MobileStoreApp.Forms
 {
     public partial class DeliveriesForm : Form
     {
@@ -20,7 +20,7 @@ namespace MusicStoreApp.Forms
         private void InitializeComponent()
         {
             this.Text = "📦 Поставки";
-            this.Size = new System.Drawing.Size(900, 550);
+            this.Size = new System.Drawing.Size(1000, 550);
             this.BackColor = Color.FromArgb(240, 240, 240);
             this.StartPosition = FormStartPosition.CenterScreen;
 
@@ -47,10 +47,12 @@ namespace MusicStoreApp.Forms
             _grid.RowTemplate.Height = 35;
 
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Id", HeaderText = "ID", Width = 60 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SupplierName", HeaderText = "Поставщик", Width = 220 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "SupplierName", HeaderText = "Поставщик", Width = 200 });
             _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "DeliveryDate", HeaderText = "Дата", Width = 150 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "ItemName", HeaderText = "Товар", Width = 250 });
-            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Count", HeaderText = "Количество", Width = 130 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Brand", HeaderText = "Бренд", Width = 150 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Model", HeaderText = "Модель", Width = 200 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "Count", HeaderText = "Количество", Width = 100 });
+            _grid.Columns.Add(new DataGridViewTextBoxColumn { DataPropertyName = "TotalCost", HeaderText = "Стоимость", Width = 120 });
 
             var btnPanel = new FlowLayoutPanel
             {
@@ -61,7 +63,7 @@ namespace MusicStoreApp.Forms
                 BackColor = Color.FromArgb(250, 250, 250)
             };
 
-            var btnClose = CreateStyledButton(" Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
+            var btnClose = CreateStyledButton("❌ Закрыть", Color.FromArgb(149, 165, 166), (s, e) => this.Close());
             var btnAdd = CreateStyledButton("➕ Добавить", Color.FromArgb(46, 204, 113), (s, e) => AddItem());
 
             btnPanel.Controls.Add(btnClose);
@@ -118,7 +120,7 @@ namespace MusicStoreApp.Forms
         private void InitializeComponent()
         {
             this.Text = "➕ Добавить поставку";
-            this.Size = new System.Drawing.Size(450, 400);
+            this.Size = new System.Drawing.Size(480, 450);
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
             this.StartPosition = FormStartPosition.CenterParent;
             this.BackColor = Color.FromArgb(240, 240, 240);
@@ -129,7 +131,7 @@ namespace MusicStoreApp.Forms
             {
                 Dock = DockStyle.Fill,
                 ColumnCount = 2,
-                RowCount = 6,
+                RowCount = 7,
                 Padding = new Padding(25)
             };
 
@@ -141,20 +143,30 @@ namespace MusicStoreApp.Forms
             layout.Controls.Add(lblSupplier, 0, 0);
             layout.Controls.Add(txtSupplier, 1, 0);
 
-            var lblItem = new Label { Text = "Товар:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
-            var txtItem = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblItem, 0, 1);
-            layout.Controls.Add(txtItem, 1, 1);
+            var lblBrand = new Label { Text = "Бренд:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            var txtBrand = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblBrand, 0, 1);
+            layout.Controls.Add(txtBrand, 1, 1);
+
+            var lblModel = new Label { Text = "Модель:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            var txtModel = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblModel, 0, 2);
+            layout.Controls.Add(txtModel, 1, 2);
 
             var lblCount = new Label { Text = "Количество:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
             var txtCount = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
-            layout.Controls.Add(lblCount, 0, 2);
-            layout.Controls.Add(txtCount, 1, 2);
+            layout.Controls.Add(lblCount, 0, 3);
+            layout.Controls.Add(txtCount, 1, 3);
+
+            var lblCost = new Label { Text = "Стоимость:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
+            var txtCost = new TextBox { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10) };
+            layout.Controls.Add(lblCost, 0, 4);
+            layout.Controls.Add(txtCost, 1, 4);
 
             var lblDate = new Label { Text = "Дата:", AutoSize = true, Font = new Font("Segoe UI", 10, FontStyle.Bold), ForeColor = Color.FromArgb(44, 62, 80) };
             var dtpDate = new DateTimePicker { Dock = DockStyle.Fill, Font = new Font("Segoe UI", 10), Format = DateTimePickerFormat.Short };
-            layout.Controls.Add(lblDate, 0, 3);
-            layout.Controls.Add(dtpDate, 1, 3);
+            layout.Controls.Add(lblDate, 0, 5);
+            layout.Controls.Add(dtpDate, 1, 5);
 
             var btnPanel = new FlowLayoutPanel { FlowDirection = FlowDirection.RightToLeft, Dock = DockStyle.Fill };
 
@@ -178,8 +190,10 @@ namespace MusicStoreApp.Forms
                     var delivery = new Delivery
                     {
                         SupplierName = txtSupplier.Text,
-                        ItemName = txtItem.Text,
+                        Brand = txtBrand.Text,
+                        Model = txtModel.Text,
                         Count = int.Parse(txtCount.Text),
+                        TotalCost = decimal.Parse(txtCost.Text),
                         DeliveryDate = dtpDate.Value
                     };
                     _db.AddDelivery(delivery);
@@ -210,7 +224,7 @@ namespace MusicStoreApp.Forms
             btnPanel.Controls.Add(btnCancel);
             btnPanel.Controls.Add(btnSave);
 
-            layout.Controls.Add(btnPanel, 0, 5);
+            layout.Controls.Add(btnPanel, 0, 6);
             layout.SetColumnSpan(btnPanel, 2);
 
             this.Controls.Add(layout);

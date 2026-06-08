@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MusicStoreApp
+namespace MobileStoreApp
 {
     static class Program
     {
